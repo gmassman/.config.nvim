@@ -25,10 +25,16 @@ vim.opt.signcolumn = "auto"
 
 vim.opt.updatetime = 50
 
+vim.opt.cmdheight = 1
+vim.opt.laststatus = 2
+vim.opt.statusline = "%f%m"
+vim.opt.ruler = true
+
+vim.opt.backspace = "indent,eol,start"
+
 -- global options
 vim.g.mapleader = " "
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-

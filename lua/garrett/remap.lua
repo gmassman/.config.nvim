@@ -1,9 +1,12 @@
 -- insert blank lines
-vim.keymap.set("n", "<CR>", "O<Esc>j")
+vim.keymap.set("n", "<CR>", "o<Esc>k")
 vim.keymap.set("n", "<leader><CR>", "O<Esc>j")
 
+-- preferred redo key
+vim.keymap.set("n", "U", "<C-r>")
+
 -- open nerd tree
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pt", vim.cmd.NvimTreeToggle)
 
 -- move highlighted blocks up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
