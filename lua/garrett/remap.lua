@@ -38,4 +38,4 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- source all the things
-vim.keymap.set("n", "<leader>sv", ":luafile ~/.config/nvim/init.lua<CR>")
+vim.keymap.set("n", "<leader>i", ":luafile ~/.config/nvim/init.lua<CR>")

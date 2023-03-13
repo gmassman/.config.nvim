@@ -46,4 +46,7 @@ return require('packer').startup(function(use)
         'nvim-tree/nvim-tree.lua',
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
+
+    use('jiangmiao/auto-pairs')
+    use('tpope/vim-commentary')
 end)
