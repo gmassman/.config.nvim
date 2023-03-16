@@ -26,7 +26,7 @@ vim.opt.signcolumn = "auto"
 vim.opt.updatetime = 50
 
 vim.opt.cmdheight = 1
-vim.opt.laststatus = 2
+vim.opt.laststatus = 3
 vim.opt.statusline ="%<%f %m%=%-8.(%c,%l/%L%) %P"
 vim.opt.ruler = true
 
