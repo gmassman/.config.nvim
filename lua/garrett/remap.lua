@@ -1,3 +1,6 @@
+-- save
+vim.keymap.set({"n", "i", "v"}, "<C-s>", "<cmd>w<CR>")
+
 -- insert blank lines
 vim.keymap.set("n", "<CR>", "o<Esc>k")
 vim.keymap.set("n", "<leader><CR>", "O<Esc>j")
