@@ -1,5 +1,5 @@
 require("garrett.set")
-require("garrett.packer")
 require("garrett.remap")
+require("garrett.packer")
 require("garrett.startup")
 

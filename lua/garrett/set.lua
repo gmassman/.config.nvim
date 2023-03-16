@@ -1,40 +1,45 @@
--- options
-vim.opt.number = true
-vim.opt.relativenumber = true
-
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.smartindent = true
-
-vim.opt.wrap = false
-
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.backupdir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "auto"
-
-vim.opt.updatetime = 50
-
-vim.opt.cmdheight = 1
-vim.opt.laststatus = 3
-vim.opt.statusline ="%<%f %m%=%-8.(%c,%l/%L%) %P"
-vim.opt.ruler = true
-
-vim.opt.backspace = "indent,eol,start"
-
 -- global options
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- options
+vim.o.number = true
+vim.o.relativenumber = true
+
+vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.smartindent = true
+
+vim.o.wrap = false
+
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.backupdir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
+
+vim.o.hlsearch = false
+vim.o.incsearch = true
+
+vim.o.termguicolors = true
+
+vim.o.scrolloff = 8
+vim.o.signcolumn = "auto"
+
+vim.o.updatetime = 50
+
+vim.o.cmdheight = 1
+vim.o.laststatus = 3
+vim.o.statusline = "%<%f %m%=%-8.(%c,%l/%L%) %P"
+vim.o.ruler = true
+
+vim.opt.backspace = { 'indent', 'eol', 'start' }
+
+-- Set completeopt to have a better completion experience
+vim.opt.completeopt = { 'menuone', 'noselect' }
+
