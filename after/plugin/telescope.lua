@@ -18,6 +18,8 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
+vim.keymap.set('n', '<leader>lr', builtin.lsp_references, {})
+
 -- no thanks Primeagen
 --vim.keymap.set('n', '<leader>ps', function()
 --	builtin.grep_string({ search = vim.fn.input("Grep > ") })

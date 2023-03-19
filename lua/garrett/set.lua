@@ -28,7 +28,6 @@ vim.o.incsearch = true
 
 vim.o.termguicolors = true
 
-vim.o.scrolloff = 8
 vim.o.signcolumn = "auto"
 
 vim.o.updatetime = 50

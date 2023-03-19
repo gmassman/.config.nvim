@@ -37,6 +37,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- quickfix shortcuts
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
+vim.keymap.set('n', '<C-q>', '<cmd>cclose<cr>')
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
@@ -52,3 +53,6 @@ vim.keymap.set("i", "<C-i>", "from pprint import pprint as pp; import ipdb; ipdb
 -- Change leader key default behavior
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+-- Terminal!!!
+vim.keymap.set('t', '<C-[>', '<C-\\><C-n>')
+vim.keymap.set('n', '<leader>"', '<cmd>split<cr><cmd>terminal<cr><C-J><cmd>resize 10<cr>')
