@@ -25,6 +25,7 @@ lsp.ensure_installed({
     'rust_analyzer',
     'gopls',
     'emmet_ls',
+    'lua_ls',
 })
 
 local emmet_capabilities = vim.lsp.protocol.make_client_capabilities()
