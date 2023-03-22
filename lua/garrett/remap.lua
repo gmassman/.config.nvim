@@ -55,4 +55,13 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Terminal!!!
 vim.keymap.set('t', '<C-[>', '<C-\\><C-n>')
-vim.keymap.set('n', '<leader>"', '<cmd>split<cr><cmd>terminal<cr><C-J><cmd>resize 10<cr>')
+vim.keymap.set('n', '<leader>"', function()
+    vim.cmd.split()
+    vim.cmd.normal('J')  -- TODO figure out how to get this to work: vim.cmd.execute([[ "normal" \<C-w>J ]])
+    vim.cmd.terminal()
+    vim.cmd.resize(10)
+end)
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = {"term://*"},
+    command = "startinsert!",
+})

@@ -13,8 +13,8 @@ local lsp = require("lsp-zero").preset({
 lsp.on_attach(function(client, bufnr)
     local opts = {buffer = bufnr}
 
-    vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 end)
 
 lsp.ensure_installed({
