@@ -44,11 +44,8 @@ vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 -- replace word under cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- source all the things?
-vim.keymap.set("n", "<leader>i", ":source ~/.config/nvim/init.lua<CR>")
-
--- python debugger
-vim.keymap.set("i", "<C-i>", "from pprint import pprint as pp; import ipdb; ipdb.set_trace()")
+-- -- source all the things?
+-- vim.keymap.set("n", "<leader>i", ":source ~/.config/nvim/init.lua<CR>")
 
 -- Change leader key default behavior
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -57,11 +54,13 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('t', '<C-[>', '<C-\\><C-n>')
 vim.keymap.set('n', '<leader>"', function()
     vim.cmd.split()
-    vim.cmd.normal('J')  -- TODO figure out how to get this to work: vim.cmd.execute([[ "normal" \<C-w>J ]])
     vim.cmd.terminal()
+    vim.cmd.normal('J')  -- TODO figure out how to get this to work: vim.cmd.execute([[ "normal" \<C-w>J ]])
     vim.cmd.resize(10)
 end)
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "TermOpen"}, {
     pattern = {"term://*"},
-    command = "startinsert!",
+    group = vim.api.nvim_create_augroup("GarrettTerm", { clear = true }),
+    command = 'execute "normal! A"',
+    desc = 'Start in insert mode when entering a terminal buffer',
 })
