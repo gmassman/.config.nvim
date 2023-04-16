@@ -1,4 +1,2 @@
-require("garrett.options")
-require("garrett.lazy")
-require("garrett.remap")
-require("garrett.startup")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
