@@ -7,6 +7,4 @@ vim.g.gruvbox_material_background = "medium"
 
 vim.o.termguicolors = true
 
--- vim.o.signcolumn = "auto"
-
 vim.o.updatetime = 50
