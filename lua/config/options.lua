@@ -8,3 +8,5 @@ vim.g.gruvbox_material_background = "medium"
 vim.o.termguicolors = true
 
 vim.o.updatetime = 50
+
+vim.wo.listchars = "tab:> ,nbsp:+"
