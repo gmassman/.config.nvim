@@ -40,3 +40,6 @@ vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
 -- replace word under cursor
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Terminal
+vim.keymap.set("t", "<C-[>", "<C-\\><C-n>")
