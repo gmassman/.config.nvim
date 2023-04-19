@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader><CR>", "O<Esc>j")
 vim.keymap.set("n", "U", "<C-r>")
 
 -- open nvim tree
-vim.keymap.set("n", "<leader>tt", vim.cmd.NvimTreeToggle)
+vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<leader>tf", vim.cmd.NvimTreeFindFile)
 
 -- move highlighted blocks up and down
@@ -49,6 +49,12 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- Change leader key default behavior
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- toggle line numbers
+vim.keymap.set({ 'n', 'v' }, '<leader>tl', function()
+    vim.wo.number = not vim.wo.number
+    vim.wo.relativenumber = not vim.wo.relativenumber
+end)
 
 -- Terminal!!!
 vim.keymap.set('t', '<C-[>', '<C-\\><C-n>')

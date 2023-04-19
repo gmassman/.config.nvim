@@ -18,8 +18,8 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.ensure_installed({
-    -- 'jedi_language_server',
-    'pyright',
+    'jedi_language_server',
+    -- 'pyright',
     'tsserver',
     'svelte',
     'rust_analyzer',
