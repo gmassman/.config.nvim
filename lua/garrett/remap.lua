@@ -41,6 +41,9 @@ vim.keymap.set('n', '<C-q>', '<cmd>cclose<cr>')
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
+-- clear the quickfix list
+vim.keymap.set("n", "<leader>qc", "<cmd>cexpr []<cr>")
+
 -- replace word under cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
