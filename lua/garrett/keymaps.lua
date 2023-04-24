@@ -48,7 +48,7 @@ vim.keymap.set(
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- toggle line numbers
-vim.keymap.set({ "n", "v" }, "<leader>tl", function()
+vim.keymap.set({ "n", "v" }, "<leader>ul", function()
   vim.wo.number = not vim.wo.number
   vim.wo.relativenumber = not vim.wo.relativenumber
 end, {

@@ -10,11 +10,11 @@ return {
     { "<leader>/", Util.telescope("live_grep"), desc = "Grep (root dir)" },
     { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
     { "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
-    -- find
-    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-    { "<leader>ff", Util.telescope("files"), desc = "Find Files (root dir)" },
-    { "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
-    { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
+    -- project
+    { "<leader>pb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+    { "<leader>pf", Util.telescope("files"), desc = "Find Files (root dir)" },
+    { "<leader>pF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+    { "<leader>pr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
     -- git
     { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
     { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
