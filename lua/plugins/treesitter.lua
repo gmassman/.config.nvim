@@ -19,6 +19,7 @@ return {
       ensure_installed = {
         "bash",
         "c",
+        "css",
         "html",
         "javascript",
         "json",
@@ -30,6 +31,8 @@ return {
         "python",
         "query",
         "regex",
+        "scss",
+        "svelte",
         "tsx",
         "typescript",
         "vim",
