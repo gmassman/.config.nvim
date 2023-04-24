@@ -1,6 +1,11 @@
+require("garrett.options")
 -- global options
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- options
 vim.o.number = true
@@ -33,7 +38,6 @@ vim.o.laststatus = 3
 vim.o.statusline = "%<%f %m%=%-8.(%c,%l/%L%) %P"
 vim.o.ruler = true
 
-vim.opt.backspace = { "indent", "eol", "start" }
+vim.opt.backspace = { 'indent', 'eol', 'start' }
 
--- Set completeopt to have a better completion experience
-vim.opt.completeopt = { "menuone", "noselect" }
+-- Set completeopt to have a better comp
