@@ -9,7 +9,7 @@ return {
       {
         "hrsh7th/cmp-nvim-lsp",
         cond = function()
-          return require("util").has("nvim-cmp")
+          return require("garrett.util").has("nvim-cmp")
         end,
       },
     },
@@ -74,7 +74,7 @@ return {
     },
     ---@param opts PluginLspOpts
     config = function(_, opts)
-      local Util = require("util")
+      local Util = require("garrett.util")
       -- setup autoformat
       require("plugins.lsp.format").autoformat = opts.autoformat
       -- setup formatting and keymaps

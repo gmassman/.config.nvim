@@ -1,4 +1,4 @@
-local Util = require("util")
+local Util = require("garrett.util")
 
 return {
   "nvim-telescope/telescope.nvim",

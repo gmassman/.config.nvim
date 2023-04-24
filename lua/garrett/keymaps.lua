@@ -51,18 +51,14 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>ul", function()
   vim.wo.number = not vim.wo.number
   vim.wo.relativenumber = not vim.wo.relativenumber
-end, {
-  desc = "Toggle line numbers",
-})
+end, { desc = "Toggle line numbers" })
 
 -- Terminal!!!
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>", { desc = "Enter noraml mode in terminal" })
 vim.keymap.set("n", '<leader>"', function()
-  vim.cmd.split()
+  vim.cmd.tabedit()
   vim.cmd.terminal()
-  vim.cmd.normal("J") -- TODO figure out how to get this to work: vim.cmd.execute([[ "normal" \<C-w>J ]])
-  vim.cmd.resize(10)
-end, { desc = "Open terminal" })
+end, { desc = "Open terminal in new tab" })
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "TermOpen" }, {
   pattern = { "term://*" },
   group = vim.api.nvim_create_augroup("GarrettTerm", { clear = true }),

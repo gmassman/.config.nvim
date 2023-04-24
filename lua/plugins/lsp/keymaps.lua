@@ -47,7 +47,7 @@ function M.get()
         has = "codeAction",
       }
     }
-    if require("util").has("inc-rename.nvim") then
+    if require("garrett.util").has("inc-rename.nvim") then
       M._keys[#M._keys + 1] = {
         "<leader>cr",
         function()
