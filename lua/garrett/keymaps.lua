@@ -59,9 +59,9 @@ vim.keymap.set("n", '<leader>"', function()
   vim.cmd.tabedit()
   vim.cmd.terminal()
 end, { desc = "Open terminal in new tab" })
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "TermOpen" }, {
-  pattern = { "term://*" },
-  group = vim.api.nvim_create_augroup("GarrettTerm", { clear = true }),
-  command = 'execute "normal! A"',
-  desc = "Start in insert mode when entering a terminal buffer",
-})
+-- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "TermOpen" }, {
+--   pattern = { "term://*" },
+--   group = vim.api.nvim_create_augroup("GarrettTerm", { clear = true }),
+--   command = 'execute "normal! A"',
+--   desc = "Start in insert mode when entering a terminal buffer",
+-- })
