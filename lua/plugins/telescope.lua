@@ -15,8 +15,8 @@ return {
     },
     init = function()
       local telescope = require("telescope")
-      telescope.load_extension("live_grep_args")
       telescope.load_extension("fzf")
+      telescope.load_extension("live_grep_args")
     end,
     keys = {
       { "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
@@ -130,21 +130,19 @@ return {
               ["<C-b>"] = function(...)
                 return require("telescope.actions").preview_scrolling_up(...)
               end,
+              ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
+              ["<C-i>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob " }),
+              ["<C-.>"] = function(...)
+                return require("telescope.actions").toggle_selection(...)
+              end,
             },
             n = {
               ["q"] = function(...)
                 return require("telescope.actions").close(...)
               end,
-            },
-          },
-        },
-        extensions = {
-          live_grep_args = {
-            mappings = { -- extend mappings
-              i = {
-                ["<C-k>"] = require("telescope-live-grep-args.actions").quote_prompt(),
-                ["<C-i>"] = require("telescope-live-grep-args.actions").quote_prompt({ postfix = " --iglob " }),
-              },
+              ["<Tab>"] = function(...)
+                return require("telescope.actions").toggle_selection(...)
+              end,
             },
           },
         },

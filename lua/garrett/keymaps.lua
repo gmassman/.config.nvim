@@ -1,3 +1,5 @@
+local Util = require("garrett.util")
+
 -- save
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { desc = "Save" })
 
@@ -47,11 +49,18 @@ vim.keymap.set(
 -- Change leader key default behavior
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
--- toggle line numbers
+-- toggle options
 vim.keymap.set({ "n", "v" }, "<leader>ul", function()
   vim.wo.number = not vim.wo.number
   vim.wo.relativenumber = not vim.wo.relativenumber
 end, { desc = "Toggle line numbers" })
+vim.keymap.set("n", "<leader>uf", require("plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
+vim.keymap.set("n", "<leader>us", function()
+  Util.toggle("spell")
+end, { desc = "Toggle Spelling" })
+vim.keymap.set("n", "<leader>uw", function()
+  Util.toggle("wrap")
+end, { desc = "Toggle Word Wrap" })
 
 -- Terminal!!!
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>", { desc = "Enter noraml mode in terminal" })
