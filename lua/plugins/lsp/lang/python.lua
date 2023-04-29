@@ -46,16 +46,14 @@ return {
             pylsp = {
               plugins = {
                 autopep8 = { enabled = false },
-                jedi_completion = { enabled = true },
+                jedi_completion = {
+                  enabled = true,
+                  fuzzy = true,
+                },
                 isort = { enabled = true },
                 black = { enabled = true },
                 rope_autoimport = { enabled = true },
-                -- rope_completion = { enabled = true },
                 ruff = { enabled = false },
-                -- ruff = {
-                --   enabled = true,
-                --   extendSelect = { "I" },
-                -- },
               },
             },
           },
