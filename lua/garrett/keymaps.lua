@@ -38,10 +38,15 @@ vim.keymap.set("n", "<C-q>", "<cmd>cclose<cr>", { desc = "Close quickfix list" }
 --vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { desc = "" })
 --vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { desc = "" })
 
+-- vim.keymap.set({ "n", "i" }, "<C-Right>", "<C-W>><C-W>>", { desc = "Increase horizontal window size" })
+-- vim.keymap.set({ "n", "i" }, "<C-Left>", "<C-W><<C-W><", { desc = "Decrease horizontal window size" })
+-- vim.keymap.set({ "n", "i" }, "<C-Up>", "<C-W>-<C-W>-", { desc = "Increase vertical window size" })
+-- vim.keymap.set({ "n", "i" }, "<C-Down>", "<C-W>+<C-W>+", { desc = "Decrease vertical window size" })
+
 -- replace word under cursor
 vim.keymap.set(
   "n",
-  "<leader>s",
+  "<leader>rw",
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Replace word under cursor" }
 )
@@ -67,10 +72,6 @@ vim.keymap.set("t", "<C-[>", "<C-\\><C-n>", { desc = "Enter noraml mode in termi
 vim.keymap.set("n", '<leader>"', function()
   vim.cmd.tabedit()
   vim.cmd.terminal()
+  vim.wo.number = false
+  vim.wo.relativenumber = false
 end, { desc = "Open terminal in new tab" })
--- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "TermOpen" }, {
---   pattern = { "term://*" },
---   group = vim.api.nvim_create_augroup("GarrettTerm", { clear = true }),
---   command = 'execute "normal! A"',
---   desc = "Start in insert mode when entering a terminal buffer",
--- })

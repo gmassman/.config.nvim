@@ -34,10 +34,6 @@ return {
     -- build = ":PylspInstall python-lsp-ruff",
     opts = {
       servers = {
-        -- ruff_lsp = {
-        --   settings = {},
-        -- },
-
         pylsp = {
           -- pylsp = {
           -- pylsp.plugins.rope_autoimport.enabled
@@ -50,15 +46,19 @@ return {
                   enabled = true,
                   fuzzy = true,
                 },
+                pyflakes = { enabled = false },
                 isort = { enabled = true },
-                black = { enabled = true },
+                black = { enabled = false },
                 rope_autoimport = { enabled = true },
-                ruff = { enabled = false },
+                ruff = {
+                  enabled = true,
+                  -- lineLength = 119,
+                  -- extendIgnore = { "E402" },
+                },
               },
             },
           },
         },
-        -- },
       },
     },
   },
