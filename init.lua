@@ -1,3 +1,8 @@
-require("garrett.options")
-require("garrett.lazy")
-require("garrett.keymaps")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
+
+if vim.g.neovide then
+  require("config.neovide")
+end
+
+vim.o.guifont = "Source Code Pro:h14"
