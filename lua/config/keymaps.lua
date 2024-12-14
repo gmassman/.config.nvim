@@ -28,6 +28,10 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yankin
 -- don't yank when pasting
 vim.keymap.set("v", "p", '"_dP', { desc = "Paste without yanking" })
 
+-- Bad bufferline, hijacking default H and L behavior...
+vim.keymap.del("n", "<S-h>")
+vim.keymap.del("n", "<S-l>")
+
 require("which-key").add({
   { "<leader>y", group = "python" },
   {
