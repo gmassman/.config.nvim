@@ -6,7 +6,7 @@ vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<CR>", { desc = "Save" })
 
 -- insert blank lines
 vim.keymap.set("n", "<CR>", "o<Esc>k", { desc = "Insert blank line below" })
-vim.keymap.set("n", "<leader><CR>", "O<Esc>j", { desc = "Insert blank line above" })
+vim.keymap.set("n", "<S-CR>", "O<Esc>j", { desc = "Insert blank line above" })
 
 -- preferred redo key
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
@@ -25,8 +25,7 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Next search result (up)" })
 -- delete without yanking
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
 
--- don't yank when pasting
-vim.keymap.set("v", "p", '"_dP', { desc = "Paste without yanking" })
+vim.keymap.set({ "n", "v" }, "<C-y>", '"+y', { desc = "Copy to system clipboard" })
 
 -- Bad bufferline, hijacking default H and L behavior...
 vim.keymap.del("n", "<S-h>")
@@ -38,6 +37,12 @@ require("which-key").add({
     "<leader>yd",
     "Ofrom pprint import pprint as pp; import ipdb; ipdb.set_trace()<esc>:w<CR>",
     desc = "set an ipdb trace",
+    mode = "n",
+  },
+  {
+    "<leader>yc",
+    "Ofrom pprint import pprint as pp; from celery.contrib import rdb; rdb.set_trace()<esc>:w<CR>",
+    desc = "set an rdb trace (e.g. for Celery)",
     mode = "n",
   },
 })

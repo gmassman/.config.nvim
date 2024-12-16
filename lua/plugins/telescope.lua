@@ -1,3 +1,4 @@
+local mappings = require("telescope.mappings")
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
@@ -6,8 +7,6 @@ return {
       "nvim-telescope/telescope-live-grep-args.nvim",
       config = function()
         require("telescope").load_extension("live_grep_args")
-        -- LazyVim.on_load("telescope.nvim", function()
-        -- end)
       end,
     },
   },
@@ -49,6 +48,11 @@ return {
       layout_config = { prompt_position = "top" },
       sorting_strategy = "ascending",
       winblend = 0,
+      -- mappings = {
+      --   i = {
+      --     ["<M-q>"] = require("telescope.actions").send_selected_to_qflist + require("telescope.actions").open_qflist,
+      --   },
+      -- },
     },
     -- extensions = {
     --   live_grep_args = {
