@@ -15,3 +15,4 @@ vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true 
 
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_hide_mouse_when_typing = true
+vim.g.neovide_input_macos_alt_is_meta = "both"
