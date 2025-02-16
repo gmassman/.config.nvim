@@ -4,5 +4,3 @@ require("config.lazy")
 if vim.g.neovide then
   require("config.neovide")
 end
-
-vim.o.guifont = "Source Code Pro:h14"

@@ -28,9 +28,11 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yankin
 -- don't yank when pasting
 vim.keymap.set("v", "p", '"_dP', { desc = "Paste without yanking" })
 
+vim.keymap.set("v", "<C-y>", '"+y', { desc = "Copy to clipboard" })
+
 -- Bad bufferline, hijacking default H and L behavior...
-vim.keymap.del("n", "<S-h>")
-vim.keymap.del("n", "<S-l>")
+vim.keymap.set({ "n", "v", "i" }, "<S-Left>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+vim.keymap.set({ "n", "v", "i" }, "<S-Right>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
 require("which-key").add({
   { "<leader>y", group = "python" },
@@ -41,3 +43,7 @@ require("which-key").add({
     mode = "n",
   },
 })
+
+-- Bad bufferline, hijacking default H and L behavior...
+vim.keymap.del("n", "<S-h>")
+vim.keymap.del("n", "<S-l>")
