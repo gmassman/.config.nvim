@@ -4,7 +4,8 @@ return {
   opts = {
     ---@type lspconfig.options
     servers = {
-      basedpyright = {},
+      -- basedpyright = {},
+      -- pyright = {},
     },
   },
 }

@@ -47,6 +47,12 @@ require("which-key").add({
     desc = "set an rdb trace (e.g. for Celery)",
     mode = "n",
   },
+  {
+    "<leader><leader>",
+    "<esc>:Telescope find_files<cr>",
+    desc = "Find Files (cwd)",
+    mode = "n",
+  },
 })
 
 -- Bad bufferline, hijacking default H and L behavior...
