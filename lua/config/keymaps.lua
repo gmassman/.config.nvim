@@ -53,8 +53,19 @@ require("which-key").add({
     desc = "Find Files (cwd)",
     mode = "n",
   },
+  {
+    "<leader>cx",
+    "<esc>:LspRestart<cr>",
+    desc = "LSP Restart",
+    mode = "n",
+  },
 })
 
+local function del_if_exists(lhs, mode)
+  if vim.fn.mapcheck(lhs, mode) then
+    vim.keymap.del(mode, lhs)
+  end
+end
 -- Bad bufferline, hijacking default H and L behavior...
-vim.keymap.del("n", "<S-h>")
-vim.keymap.del("n", "<S-l>")
+del_if_exists("<S-h>", "n")
+del_if_exists("<S-l>", "n")
