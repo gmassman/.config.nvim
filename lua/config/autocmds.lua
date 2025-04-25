@@ -13,3 +13,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "elixir" },
   command = "mix format",
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = { "*.ly", "*.ily", "*.tex" },
+  command = "syntax sync fromstart",
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "rust" },
+  command = "cargo fmt",
+})
